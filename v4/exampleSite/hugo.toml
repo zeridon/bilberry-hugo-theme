@@ -1,11 +1,13 @@
 title = "My cool new Blog"
 baseURL = "https://example.com/"
 
-# Option 1 (recommended): adding the theme as a Hugo module
-theme = "github.com/Lednerb/bilberry-hugo-theme/v4"
+[module]
+  [[module.imports]]
+    # Option 1 (recommended): adding the theme as a Hugo module
+    path = "github.com/Lednerb/bilberry-hugo-theme/v4"
 
-# Options 2 and 3: cloning/copying the theme files
-# theme = "bilberry-hugo-theme/v4"
+    # Options 2 and 3: cloning/copying the theme files
+    # path = "bilberry-hugo-theme/v4"
 
 # Generate the robots.txt file for SEO
 enableRobotsTXT = true
@@ -27,7 +29,7 @@ disqusShortname = ""
   css_modules = []
   js_modules = []
 
-  # Description and meta data for the search engines
+  # Description and metadata for the search engines
   author = "Lednerb"
   description = "Bilberry Premium Theme for Hugo."
   keywords = "blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts"
@@ -161,15 +163,16 @@ disqusShortname = ""
     creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
 
 
-# customize your available languages for your multi-lingual site
-# or delete one of the [Languages.xx] blocks to use the theme with only one supported language
-[Languages]
-  [Languages.en]
+# customize your available languages for your multilingual site
+# or delete one of the [languages.xx] blocks to use the theme with only one supported language
+[languages]
+  [languages.en]
     weight = 1
-  [Languages.de]
+  [languages.de]
     weight = 2
     title = "Mein cooler neuer Blog"
-    subtitle = "Hallo Welt! Dies ist der epischste Untertitel aller Zeiten."
+    [languages.de.params]
+      subtitle = "Hallo Welt! Dies ist der epischste Untertitel aller Zeiten."
 
 [markup]
   defaultMarkdownHandler = 'goldmark'
